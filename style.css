@@ -35,7 +35,7 @@ html {
 
 #logo {
   height: 5rem;
-  margin-left: 0.2rem;
+  margin-left: 2rem;
 }
 
 .nav-links {
@@ -140,10 +140,12 @@ html {
 }
 
 .introduction h1 {
+  font-size: 3rem;
   color: var(--color1);
 }
 
-.introduction p {
+.introduction h2 {
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
@@ -193,7 +195,7 @@ html {
 
 .about-me {
   grid-area: about;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: var(--color1);
   text-align: center;
@@ -481,9 +483,30 @@ html {
     animation-delay: 250ms;
   }
 
+  .cv-btn {
+    border: none;
+  }
+
+  .cv-btn:hover {
+    border: none;
+    border-radius: 0;
+  }
+
   .introduction {
     grid-template-columns: 1fr;
     padding: 1rem 0.5rem 4rem;
+  }
+
+  .introduction h3 {
+    font-size: 1.3rem;
+  }
+
+  .introduction h1 {
+    font-size: 2.5rem;
+  }
+
+  .introduction h2 {
+    font-size: 1.6rem;
   }
 
   .intro-text {
@@ -641,6 +664,18 @@ html {
   .introduction {
     grid-template-columns: 1fr;
     padding: 1rem 0.5rem 2rem;
+  }
+
+  .introduction h3 {
+    font-size: 1rem;
+  }
+
+  .introduction h1 {
+    font-size: 1.8rem;
+  }
+
+  .introduction h2 {
+    font-size: 1.3rem;
   }
 
   .intro-text {
