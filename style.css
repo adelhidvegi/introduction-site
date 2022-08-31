@@ -1,0 +1,720 @@
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 1em;
+}
+
+#root {
+  --color1: #990033;
+  --color2: #f6f2f4;
+  --color-of-background: #e8e8e8;
+  font-family: "Open Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*---------- Navbar ----------*/
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1.5rem;
+  background: var(--color-of-background);
+}
+
+#logo {
+  height: 5rem;
+  margin-left: 0.2rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--color1);
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 120%;
+  left: 1px;
+  bottom: -1px;
+  z-index: -1;
+  border-radius: 2px;
+  background-color: var(--color1);
+  transform: scale(0, 1);
+  transition: transform ease-out 0.25s;
+}
+
+.nav-link:hover::after {
+  width: 120%;
+  left: -10%;
+  translate: transformX(-50%);
+  transform: scale(1, 1);
+}
+
+.cv-btn {
+  color: white;
+  background-color: var(--color1);
+  border: 2px solid var(--color1);
+  border-radius: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.2em 0.6em;
+}
+
+.cv-btn:hover {
+  color: var(--color1);
+  background-color: white;
+  border: 2px solid var(--color1);
+  font-weight: bold;
+}
+
+/*---------- Hamburger Menu ----------*/
+
+.toggle-button {
+  position: absolute;
+  top: 1.75rem;
+  right: 2rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 23px;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-button-container {
+  display: none;
+}
+
+.bar {
+  height: 4px;
+  background-color: var(--color1);
+  border-radius: 3rem;
+  transition: all 0.5s;
+}
+
+/*---------- Introduction ----------*/
+
+.intro-container {
+  align-items: center;
+  background: var(--color-of-background);
+}
+
+.introduction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: auto;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.introduction h1 {
+  color: var(--color1);
+}
+
+.introduction p {
+  font-weight: bold;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2rem 1rem;
+  margin: auto;
+}
+
+.profile-links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+#linkedin,
+#github-1 {
+  width: 2.5rem;
+}
+
+#for-doggo-img {
+  width: 420px;
+  height: 470px;
+  margin: auto;
+  outline: 2px solid var(--color-of-background);
+  outline-offset: -1px;
+  border-radius: 50%;
+  background-image: url("doggo-final.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0px 0px 15px 10px var(--color-of-background);
+}
+
+/*---------- About ----------*/
+
+#about {
+  background: var(--color-of-background);
+  padding: 3rem 9rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 60% 40%;
+  grid-template-areas:
+    "about cv"
+    "tech tech";
+}
+
+.about-me {
+  grid-area: about;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--color1);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.about-me p {
+  text-indent: 2rem;
+}
+
+.cv-container {
+  position: relative;
+  margin: auto;
+  width: 160px;
+  height: 230px;
+  background-image: url("./cv-proba.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cv-container::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: none;
+}
+
+.cv-container:hover::before {
+  display: block;
+}
+
+.download-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: var(--color1);
+}
+
+#cv-link {
+  text-decoration: none;
+}
+
+.cv-container:hover .download-container {
+  opacity: 1;
+}
+
+.tech-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  grid-area: tech;
+  color: black;
+}
+
+.tech-container h2 {
+  line-height: 6rem;
+  font-weight: bolder;
+  color: var(--color1);
+}
+
+.tech-logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tech-logos li {
+  list-style-type: none;
+}
+
+/*---------- Contact ----------*/
+
+#contact {
+  background: var(--color-of-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 3rem;
+}
+
+.form-container {
+  background-color: var(--color-of-background);
+  border: 2px solid #b3b1b1;
+  border-radius: 0.25rem;
+  box-shadow: 5px 8px 5px #a1a0a0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 4fr 1fr;
+  grid-template-areas:
+    "header header"
+    "h3 h3"
+    "input1 input2"
+    "input3 input3"
+    "button button";
+  gap: 1.3rem;
+  padding: 2.2rem;
+  width: 60%;
+  margin: auto;
+}
+
+#contact-header {
+  grid-area: header;
+  text-align: center;
+  color: var(--color1);
+}
+
+.form-container h3 {
+  grid-area: h3;
+  text-align: center;
+  color: var(--color1);
+}
+
+#name-input {
+  grid-area: input1;
+  padding: 0rem 0.4rem;
+  border: 1px solid #bdbcbc;
+  box-shadow: 1px 1px #b3b1b1;
+  border-radius: 0.25rem;
+}
+
+#email-input {
+  grid-area: input2;
+  padding: 0rem 0.4rem;
+  border: 1px solid #bdbcbc;
+  box-shadow: 1px 1px #b3b1b1;
+  border-radius: 0.25rem;
+}
+
+#message-input {
+  grid-area: input3;
+  padding: 0.6rem 0.4rem;
+  border: 1px solid #bdbcbc;
+  box-shadow: 1px 1px #b3b1b1;
+  border-radius: 0.25rem;
+  font-family: "Roboto", sans-serif;
+}
+
+#name-input:focus,
+#email-input:focus,
+#message-input:focus {
+  outline: 2px solid #9f9f9f;
+}
+
+#submit-btn {
+  grid-area: button;
+  padding: 0.5em 0.8em;
+  margin: auto;
+  background-color: var(--color1);
+  color: white;
+  border: 2px solid var(--color1);
+  border-radius: 1.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#submit-btn:hover {
+  color: var(--color1);
+  font-weight: bold;
+  background-color: white;
+  border: 2px solid var(--color1);
+}
+
+.red::placeholder {
+  color: red;
+}
+
+/* ---------- Mobile View ---------- */
+
+@media screen and (min-width: 850px) and (max-width: 1200px) {
+  .introduction {
+    padding: 4rem 3rem 6rem;
+  }
+
+  .intro-text {
+    height: fit-content;
+    gap: 1rem;
+  }
+
+  #for-doggo-img {
+    width: 380px;
+    height: 430px;
+  }
+
+  #about {
+    padding: 4rem 3rem;
+  }
+
+  .form-container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 849px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .navbar.active {
+    background-color: var(--color1);
+  }
+
+  .toggle-button-container {
+    display: flex;
+  }
+
+  .toggle-button {
+    display: flex;
+    right: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color1);
+  }
+
+  .nav-links.active {
+    display: flex;
+    width: 100%;
+    animation: slideIn 0.5s ease-in-out;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+  }
+
+  .nav-link:hover {
+    color: var(--color1);
+    background-color: var(--color-of-background);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  #logo {
+    margin: 0;
+    padding: 0.35rem;
+  }
+
+  .toggle-button-container.active #bar-1 {
+    transform: rotate(45deg) translate(5.5px, 9px);
+    animation-delay: 2s;
+    background-color: white;
+  }
+
+  .toggle-button-container.active #bar-3 {
+    transform: rotate(-45deg) translate(4.5px, -8px);
+    animation-delay: 250ms;
+    background-color: white;
+  }
+
+  .toggle-button-container.active #bar-2 {
+    display: none;
+    animation-delay: 250ms;
+  }
+
+  .introduction {
+    grid-template-columns: 1fr;
+    padding: 1rem 0.5rem 4rem;
+  }
+
+  .intro-text {
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #about {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .about-me {
+    font-size: 1.2rem;
+    padding: 5rem auto;
+    margin-bottom: 1rem;
+  }
+
+  .cv-container {
+    width: 150px;
+    height: 220px;
+  }
+
+  .tech-container {
+    margin-top: 2rem;
+  }
+
+  .tech-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tech-logos img {
+    height: 3.5rem;
+    margin: 0.7rem;
+  }
+
+  .form-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    padding: 0.8rem;
+    width: 90%;
+    margin: auto;
+  }
+
+  #contact-header {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+  }
+
+  .form-container h3 {
+    font-size: 0.9rem;
+  }
+
+  #submit-btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  #logo {
+    margin: 0;
+    padding: 0.35rem;
+  }
+
+  .navbar.active {
+    background-color: var(--color1);
+  }
+
+  .toggle-button-container {
+    display: flex;
+  }
+
+  .toggle-button {
+    display: flex;
+    right: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color1);
+  }
+
+  .nav-links.active {
+    display: flex;
+    width: 100%;
+    animation: slideIn 0.5s ease-in-out;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .nav-link:hover {
+    color: var(--color1);
+    background-color: var(--color-of-background);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .toggle-button-container.active #bar-1 {
+    transform: rotate(45deg) translate(5.5px, 9px);
+    animation-delay: 2s;
+    background-color: white;
+  }
+
+  .toggle-button-container.active #bar-3 {
+    transform: rotate(-45deg) translate(4.5px, -8px);
+    animation-delay: 250ms;
+    background-color: white;
+  }
+
+  .toggle-button-container.active #bar-2 {
+    display: none;
+    animation-delay: 250ms;
+  }
+
+  .cv-btn {
+    border: none;
+  }
+
+  .cv-btn:hover {
+    border: none;
+    border-radius: 0;
+  }
+
+  .introduction {
+    grid-template-columns: 1fr;
+    padding: 1rem 0.5rem 2rem;
+  }
+
+  .intro-text {
+    font-size: 0.8rem;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #for-doggo-img {
+    width: 290px;
+    height: 340px;
+  }
+
+  #linkedin,
+  #github-1 {
+    width: 2rem;
+  }
+
+  #about {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0.6rem;
+  }
+
+  .about-me {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .cv-container {
+    width: 150px;
+    height: 220px;
+    margin: 2rem auto;
+  }
+
+  .tech-container h2 {
+    line-height: 4rem;
+    font-size: 1.3rem;
+  }
+
+  .tech-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tech-logos img {
+    height: 3rem;
+    margin: 0.7rem;
+  }
+
+  #contact {
+    padding: 2rem 0;
+  }
+
+  .form-container {
+    grid-template-rows: 1fr 1fr 2rem 2rem 3fr 1fr;
+    grid-template-areas:
+      "header header"
+      "h3 h3"
+      "input1 input1"
+      "input2 input2"
+      "input3 input3"
+      "button button";
+    gap: 0.7rem;
+    padding: 0.8rem;
+    width: 90%;
+    font-size: 0.7rem;
+  }
+
+  #submit-btn {
+    font-size: 0.8rem;
+  }
+}

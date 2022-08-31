@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <!---------- Navbar ---------->
+      <nav class="navbar">
+        <img src="logo-resized.jpg" alt="logo" id="logo" />
+        <div class="toggle-button-container">
+          <a href="#" class="toggle-button">
+            <span class="bar" id="bar-1"></span>
+            <span class="bar" id="bar-2"></span>
+            <span class="bar" id="bar-3"></span>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#contact">Contact Me</a>
+          <a
+            href="Hidvegi_Adel_CV_English_2022.pdf"
+            download="pdf"
+            href="#cv"
+            class="cv-btn"
+            >Download my CV</a
+          >
+        </div>
+      </nav>
+      <!---------- Introduction ---------->
+      <div class="intro-container">
+        <div id="home" class="introduction">
+          <div class="intro-text">
+            <h3>Hi there, I'm</h3>
+            <h1>Adel Hidvegi,</h1>
+            <h2>a Junior Frontend Developer, looking for a job opportunity.</h2>
+            <div class="profile-links">
+              <a
+                href="https://www.linkedin.com/in/adelhidvegi/"
+                target="_blank"
+              >
+                <img
+                  src="linkedin_logo_icon_143562 (1).png"
+                  alt="linkedin"
+                  id="linkedin"
+                />
+              </a>
+              <a href="https://github.com/adelhidvegi" target="_blank">
+                <img src="github_64.png" alt="github-1" id="github-1" />
+              </a>
+            </div>
+          </div>
+          <div id="for-doggo-img"></div>
+        </div>
+      </div>
+      <!---------- About ---------->
+      <div id="about">
+        <div class="about-me">
+          <p>
+            I never thought that IT related jobs, especially programming could
+            be something I would enjoy or consider as a profession, until last
+            summer, when I signed for a free online course, just out of
+            curiosity. Well, my assumptions turned out to be completely wrong.
+          </p>
+          <p>
+            I got hooked by coding during that course so much that I decided to
+            join a bootcamp, that I successfully completed in spring 2022, as a
+            Junior Frontend Developer.
+          </p>
+          <p>
+            Now I am looking to start my career in programming and learn more
+            about both front- and backend technologies.
+          </p>
+          <p>
+            If you are interested to see further details about my work
+            experiences in other fields prior to the bootcamp, you can download
+            my CV by clicking on the picture.
+          </p>
+        </div>
+        <div class="cv-container">
+          <a
+            href="Hidvegi_Adel_CV_English_2022.pdf"
+            download="pdf"
+            id="cv-link"
+          >
+            <div class="download-container">
+              <h3>Download</h3>
+              <span class="material-icons-outlined" id="download-icon">
+                file_download
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="tech-container">
+          <h2>Technologies & Tools</h2>
+          <ul class="tech-logos">
+            <li><img src="html5-logo.png" alt="html5" id="html5" /></li>
+            <li><img src="css3-logo.png" alt="css3" id="css3" /></li>
+            <li>
+              <img src="javascript-logo.png" alt="javascript" id="javascript" />
+            </li>
+            <li><img src="react-logo.png" alt="react" id="react" /></li>
+            <li><img src="node-logo.png" alt="node" id="node" /></li>
+            <li><img src="git-logo.png" alt="git" id="git" /></li>
+            <li><img src="github-logo.png" alt="github" id="github" /></li>
+            <li>
+              <img src="visual-studio-code-icon.png" alt="vscode" id="vscode" />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!---------- Contact ---------->
+      <div id="contact">
+        <form target="" class="form-container">
+          <h1 id="contact-header">Get in touch</h1>
+          <h3>
+            You can send me an email to adel.hidvegi@gmail.com, or use the below
+            contact form.
+          </h3>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            id="name-input"
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Your Email Address"
+            id="email-input"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            id="message-input"
+          ></textarea>
+          <button type="submit" id="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
