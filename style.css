@@ -197,7 +197,6 @@ html {
   grid-area: about;
   font-size: 1.4rem;
   font-weight: bold;
-  color: var(--color1);
   text-align: center;
   padding: 1rem 0;
 }
@@ -261,8 +260,8 @@ html {
   color: black;
 }
 
-.tech-container h2 {
-  line-height: 6rem;
+.tech-container h1 {
+  line-height: 7rem;
   font-weight: bolder;
   color: var(--color1);
 }
@@ -318,7 +317,6 @@ html {
 .form-container h3 {
   grid-area: h3;
   text-align: center;
-  color: var(--color1);
 }
 
 #name-input {
@@ -393,7 +391,7 @@ html {
   }
 
   #about {
-    padding: 4rem 3rem;
+    padding: 3rem 3rem;
   }
 
   .form-container {
@@ -714,7 +712,7 @@ html {
     margin: 2rem auto;
   }
 
-  .tech-container h2 {
+  .tech-container h1 {
     line-height: 4rem;
     font-size: 1.3rem;
   }
@@ -734,7 +732,7 @@ html {
   }
 
   .form-container {
-    grid-template-rows: 1fr 1fr 2rem 2rem 3fr 1fr;
+    grid-template-rows: 1fr 1fr 2rem 2rem 5fr 1fr;
     grid-template-areas:
       "header header"
       "h3 h3"
