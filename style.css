@@ -195,14 +195,14 @@ html {
 
 .about-me {
   grid-area: about;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
   padding: 1rem 0;
 }
 
 .about-me p {
-  text-indent: 2rem;
+  padding-bottom: 1rem;
 }
 
 .cv-container {
